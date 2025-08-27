@@ -15,7 +15,7 @@
     <!--font-awesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Emergency Hotline Number</title>
+    <title>Emergency-Hotline-Number</title>
 </head>
 <body>
     <nav class="flex justify-between max-w-[1250px] mx-auto mt-3 ">
@@ -25,13 +25,13 @@
         </div>
         <div class="flex gap-2 ">
             <div class="flex gap-3 w-[100px] h-[40px] rounded-2xl bg-[#41ff6a2b] justify-center items-center ">
-                <p class="font-extrabold"><span > 0 </span></p> <img class="w-[25px] h-[25px]" src="assets/heart.png" alt="">
+                <p class="font-extrabold"><span id="heart-count"> 0 </span></p> <img class="w-[25px] h-[25px]" src="assets/heart.png" alt="">
             </div>
             <div class="flex gap-3 w-[100px] h-[40px] rounded-2xl bg-[#41ff6a2b] justify-center items-center">
-                <p class="font-extrabold"><span> 100 </span></p> <img class="w-[25px] h-[25px]" src="assets/coin.png" alt="">
+                <p class="font-extrabold"><span id="coin"> 100 </span></p> <img class="w-[25px] h-[25px]" src="assets/coin.png" alt="">
             </div>
             <div class="flex gap-3 w-[100px] h-[40px] rounded-2xl bg-[#00A63E] justify-center items-center">
-                <p class="text-white font-['Hind+Madurai',sans-serif]"><span> 0 </span> Copy </p> 
+                <p class="text-white font-['Hind+Madurai',sans-serif]"><span id="copy-count"> 0 </span> Copy </p> 
             </div>
         </div>
     </nav>
@@ -44,11 +44,11 @@
     </header>
 
     <main class="bg-[#e9f3fed0] flex justify-between max-w-[1250px] mx-auto">
-        <div class="cards mt-4 grid grid-cols-3">
-            <div class="card w-[280px] h-[270px] bg-white rounded-[12px] m-4">
+        <div id="cards" class=" mt-4 grid grid-cols-3">
+            <div id="card" class="card card-section w-[280px] h-[270px] bg-white rounded-[12px] m-4">
                 <div class="flex justify-between p-4">
                     <div><img class="w-[30px] h-[30px] p-1 bg-re rounded-lg" src="assets/emergency.png" alt=""></div>
-                    <div ><i class="fa-regular fa-heart hover:cursor-pointer"></i></div>
+                    <div ><i id="" class="heart-btn fa-regular fa-heart hover:cursor-pointer"></i></div>
                 </div>
                 <div class="p-4">
                     <h2 class="font-['Hind+Madurai',sans-serif] font-bold">National Emergency Number</h2>
@@ -59,11 +59,11 @@
                     <button class="text-[#5C5C5C] bg-gray-200 px-[16px] rounded-2xl p-1">All</button>
                 </div>
                 <div class="p-4 py-2 flex justify-around items-center ">
-                    <button class="border-gray-200 border-1 border-solid px-7 py-1 rounded-lg hover:cursor-pointer">
-                         <p class="text-[#5C5C5C] "><i class="fa-regular fa-copy"></i> Copy</p>
+                    <button class="copy-btn border-gray-200 border-1 border-solid px-7 py-1 rounded-lg hover:cursor-pointer">
+                         <p class="copy-btn text-[#5C5C5C] "><i class="copy-btn fa-regular fa-copy"></i> Copy</p>
                     </button>
-                    <button class="bg-[#00A63E] px-7 py-1 rounded-lg hover:cursor-pointer">
-                        <p class="text-white"><i class="fa-solid fa-phone"></i> Call</p>
+                    <button class="call-btn bg-[#00A63E] px-7 py-1 rounded-lg hover:cursor-pointer">
+                        <p class="call-btn text-white"><i class="call-btn fa-solid fa-phone"></i> Call</p>
                     </button>
                </div>
             </div>
@@ -247,22 +247,19 @@
              
 <!-- history section -->
         <div class=" bg-white m-4 mt-8 p-3 pt-4 rounded-lg">
-            <div class="flex justify-between items-center gap-10">
+            <div class="flex justify-between items-center gap-18">
                 <h2 class="font-medium "><i class="fa-regular fa-clock"></i> Call History</h2>
-                <button class=" bg-[#00A63E] rounded-3xl hover:cursor-pointer px-5 py-1">
+                <button id="clear-btn" class=" bg-[#00A63E] rounded-3xl hover:cursor-pointer px-5 py-1">
                     <p class="text-white">Clear</p>
                 </button>
             </div>
    <!-- history dekha jabe -->
-            <div>
-                <div class="flex justify-between items-center bg-slate-100 rounded-lg p-2 mt-2">
-                    <div>
-                        <p class="font-semibold ">Fire Service Number <br> <span class="text-gray-400"> 999</span></p>
-                    </div>
-                    <div><span class="text-[14px]">11:36:58 AM</span></div>
-                </div>
+            <div id="history-card-cointainer">
+
             </div>
         </div>
     </main>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
