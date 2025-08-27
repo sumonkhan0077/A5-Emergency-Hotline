@@ -8,10 +8,11 @@ function getElementsClassName(className){
 
 const card = getElementID('cards');
 card.addEventListener('click', function(e){
-
-    const cardTitle = card.parentNode.children[0].children[0].children[1].children[0].innerText;
-    const cardNumber = card.parentNode.children[0].children[0].children[2].children[0].innerText;
-    const date = new Date().toLocaleTimeString()
+     const cardElement = e.target.closest('.card'); 
+         if(!cardElement) return; 
+     const cardTitle = cardElement.querySelector('h2').innerText;
+     const cardNumber = cardElement.querySelector('h1').innerText;
+     const date = new Date().toLocaleTimeString()
 
     // Heart button count
     if(e.target.className.includes("heart-btn")) {
@@ -24,7 +25,7 @@ card.addEventListener('click', function(e){
     if(e.target.className.includes("copy-btn")) {
         const copyNumber = cardNumber;
         navigator.clipboard.writeText(copyNumber).then(() => {
-            alert(`Number copied :  ${copyNumber}`)
+            alert("Number copied : " + copyNumber )
             const totalCopy = getElementID("copy-count").innerText;
             const totalCountCopy = Number(totalCopy) + 1;
             getElementID('copy-count').innerText = totalCountCopy;
